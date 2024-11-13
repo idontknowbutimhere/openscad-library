@@ -10,8 +10,14 @@ a free public library for these openscad files you need and can download
 
 No manual review is required. Your contribution will be live immediately!
 
-## Leave Your Comments Here!
+## 📣 How to Leave Feedback or Request File Removals
 
-Got feedback or want to request a file removal? Head over to the [`COMMENTS.md`](https://github.com/your-username/openscad-library/blob/main/COMMENTS.md) file and add your thoughts. No rules—just write whatever you want!
+### Option 1: Leave a Comment in `COMMENTS.md`
+If you like chaos and want a free-form way to give feedback, just add your comment directly in the [`COMMENTS.md`](https://github.com/idontknowbutimhere/openscad-library/blob/main/COMMENTS.md) file. Your voice will be heard (eventually) as we check this file regularly (weekly at best).
 
-We check this file regularly (kind of), so your voice will be heard (eventually).
+### Option 2: Open an Issue
+For more structured feedback, bug reports, or file removal requests, please [open a new Issue](https://github.com/idontknowbutimhere/openscad-library/issues). This is a great way to track changes and make sure your request is seen!
+
+Either way works—go wild!
+
+## I like chaos but some other 3d devs don't so enjoy the library i made so you could do what we all wanted of having a 3d openscad library!
