@@ -1,0 +1,19 @@
+name: Auto Merge Pull Requests
+
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Auto-merge PR
+        uses: peter-evans/merge-pull-requests@v4
+        with:
+          merge-method: merge
+          commit-message: auto
