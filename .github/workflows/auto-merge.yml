@@ -12,6 +12,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Move .scad files to contributions folder
+        run: |
+          mkdir -p contributions
+          find . -maxdepth 1 -type f -name "*.scad" -exec mv {} contributions/ \;
+
+      - name: Commit changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add contributions/
+          git commit -m "Move .scad files to contributions folder"
+
       - name: Auto-merge PR
         uses: peter-evans/merge-pull-requests@v4
         with:
