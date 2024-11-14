@@ -1,27 +1,42 @@
-/* Fallout 4 Green Theme */
+/* style/style.css */
 body {
-    background-color: #0f4d0f; /* Fallout 4 terminal green */
-    color: #00ff00; /* Bright green text */
-    font-family: 'Courier New', Courier, monospace;
-}
-
-a {
-    color: #00ff00; /* Bright green links */
-}
-
-a:hover {
-    color: #00cc00; /* Darker green for hover effect */
-}
-
-h1 {
-    color: #00ff00;
-}
-
-ul {
-    list-style-type: none;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
     padding: 0;
 }
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+h1 {
+    margin: 0;
+}
+.file-list {
+    padding: 20px;
+    list-style-type: none;
+}
+.file-list li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.file-list li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+.file-list li a:hover {
+    text-decoration: underline;
+}
 
-li {
-    margin: 5px 0;
+/* Hide style and script folders - You don't need to display them to the user */
+.folder {
+    display: none;
 }
