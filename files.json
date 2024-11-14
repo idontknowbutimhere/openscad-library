@@ -1,0 +1,7 @@
+{
+  "files": [
+    { "name": "file1.scad", "path": "folder1/file1.scad" },
+    { "name": "file2.scad", "path": "folder1/file2.scad" },
+    { "name": "file3.scad", "path": "folder2/file3.scad" }
+  ]
+}
