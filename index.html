@@ -3,37 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SCAD Library</title>
-</head>
-    <link rel="stylesheet" href="style.css">
-<body>
-    <h1>OpenSCAD File Library</h1>
-    <ul id="file-list"></ul>
-
-    <script>
-        const repoOwner = 'your-username';
-        const repoName = 'your-repo-name';
-        const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/`;
-
-        async function fetchFiles() {
-            const response = await fetch(apiUrl);
-            const files = await response.json();
-            const fileList = document.getElementById('file-list');
-
-            files.forEach(file => {
-                // Only display .scad files
-                if (file.name.endsWith('.scad')) {
-                    const listItem = document.createElement('li');
-                    const link = document.createElement('a');
-                    link.href = file.download_url;
-                    link.textContent = file.name;
-                    listItem.appendChild(link);
-                    fileList.appendChild(listItem);
-                }
-            });
+    <title>OpenSCAD File Library</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
         }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .file-list {
+            padding: 20px;
+            list-style-type: none;
+        }
+        .file-list li {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .file-list li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+        .file-list li a:hover {
+            text-decoration: underline;
+        }
+        /* Hide style and script folders */
+        .folder {
+            display: none;
+        }
+    </style>
+</head>
+<body>
 
-        fetchFiles();
-    </script>
+<header>
+    <h1>OpenSCAD File Library</h1>
+</header>
+
+<ul class="file-list">
+    <!-- List of SCAD files -->
+    <li><a href="folder1/file1.scad">file1.scad</a></li>
+    <li><a href="folder1/file2.scad">file2.scad</a></li>
+    <li><a href="folder2/file3.scad">file3.scad</a></li>
+    <!-- Add more SCAD files here -->
+</ul>
+
+<!-- Hidden folders (styles and scripts) -->
+<div class="folder">
+    <p>Style Folder (hidden)</p>
+    <p>Script Folder (hidden)</p>
+</div>
+
 </body>
 </html>
