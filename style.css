@@ -1,23 +1,27 @@
+/* Fallout 4 Green Theme */
 body {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
-}
-
-h1 {
-    text-align: center;
-}
-
-#file-list div {
-    margin: 10px 0;
+    background-color: #0f4d0f; /* Fallout 4 terminal green */
+    color: #00ff00; /* Bright green text */
+    font-family: 'Courier New', Courier, monospace;
 }
 
 a {
-    color: #007bff;
-    text-decoration: none;
+    color: #00ff00; /* Bright green links */
 }
 
 a:hover {
-    text-decoration: underline;
+    color: #00cc00; /* Darker green for hover effect */
+}
+
+h1 {
+    color: #00ff00;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
 }
