@@ -4,48 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpenSCAD File Library</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-        }
-        h1 {
-            margin: 0;
-        }
-        .file-list {
-            padding: 20px;
-            list-style-type: none;
-        }
-        .file-list li {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 10px;
-            margin-bottom: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .file-list li a {
-            text-decoration: none;
-            color: #333;
-            font-size: 16px;
-        }
-        .file-list li a:hover {
-            text-decoration: underline;
-        }
-        /* Hide style and script folders */
-        .folder {
-            display: none;
-        }
-    </style>
+    <!-- Link to external style.css in the style folder -->
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
 
@@ -53,19 +13,13 @@
     <h1>OpenSCAD File Library</h1>
 </header>
 
+<!-- Empty list where SCAD files will be dynamically loaded -->
 <ul class="file-list">
-    <!-- List of SCAD files -->
-    <li><a href="folder1/file1.scad">file1.scad</a></li>
-    <li><a href="folder1/file2.scad">file2.scad</a></li>
-    <li><a href="folder2/file3.scad">file3.scad</a></li>
-    <!-- Add more SCAD files here -->
+    <!-- SCAD files will be injected here by JavaScript -->
 </ul>
 
-<!-- Hidden folders (styles and scripts) -->
-<div class="folder">
-    <p>Style Folder (hidden)</p>
-    <p>Script Folder (hidden)</p>
-</div>
+<!-- Hidden script inclusion -->
+<script src="script/script.js"></script>
 
 </body>
 </html>
