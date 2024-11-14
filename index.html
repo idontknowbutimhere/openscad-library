@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OpenSCAD File Library</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCAD Library</title>
 </head>
 <body>
-<h1>OpenSCAD File Library</h1>
-<p>Browse and download OpenSCAD files contributed by the community.</p>
-<div id="file-list">Loading files...</div>
+    <h1>OpenSCAD File Library</h1>
+    <ul id="file-list"></ul>
 
-<script src="script.js"></script>
+    <script>
+        const repoOwner = 'your-username';
+        const repoName = 'your-repo-name';
+        const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents/`;
+
+        async function fetchFiles() {
+            const response = await fetch(apiUrl);
+            const files = await response.json();
+            const fileList = document.getElementById('file-list');
+
+            files.forEach(file => {
+                // Only display .scad files
+                if (file.name.endsWith('.scad')) {
+                    const listItem = document.createElement('li');
+                    const link = document.createElement('a');
+                    link.href = file.download_url;
+                    link.textContent = file.name;
+                    listItem.appendChild(link);
+                    fileList.appendChild(listItem);
+                }
+            });
+        }
+
+        fetchFiles();
+    </script>
 </body>
 </html>
