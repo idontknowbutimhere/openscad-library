@@ -1,4 +1,4 @@
-name: Auto Merge Pull Requests
+name: Auto Add Files to Contributions
 
 on:
   pull_request:
@@ -7,32 +7,28 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
-  auto-merge:
+  auto-add:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Move .scad files to contributions folder
+      - name: Move all files to contributions folder
         run: |
           mkdir -p contributions
-          find . -maxdepth 1 -type f -name "*.scad" -exec mv {} contributions/ \;
+          mv * contributions/ || true
 
       - name: Commit changes
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add contributions/
-          git commit -m "Move .scad files to contributions folder"
+          git commit -m "Automatically move files to contributions folder" || true
+          git push
 
       - name: Auto merge pull request
         uses: peter-evans/auto-merge-action@v3
         with:
           merge-method: merge
-          commit-message: auto
-permissions:
-  contents: write
-  pull-requests: write
