@@ -23,3 +23,5 @@ For more structured feedback, bug reports, or file removal requests, please [ope
 Either way works—go wild!
 
 ## I like chaos but some other 3d devs don't so enjoy the library i made so you could do what we all wanted of having a 3d openscad library!
+
+## if you know how to fix my github pages problem https://idontknowbutimhere.github.io/openscad-library/ please open an issue and let me know how to fix it thanks!
